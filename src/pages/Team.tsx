@@ -11,32 +11,32 @@ const teamMembers = [
   {
     name: 'Katherine Sau',
     role: 'Co-Chair',
-    image: 'public/headshots/Katherine Sau.jpg',
+    image: '/headshots/Katherine Sau.jpg',
     linkedin: 'https://www.linkedin.com/in/katherinesau/',
   },
   {
     name: 'Jocelyn Kwa',
     role: 'Web Developer',
-    image: 'public/headshots/Jocelyn Kwa.JPG',
+    image: '/headshots/Jocelyn Kwa.JPG',
     linkedin: 'https://www.linkedin.com/in/jocelynkwa/',
   },
   {
     name: 'Sophie Yang',
     role: 'VP Academic',
-    image: 'public/headshots/Sophie Yang.jpg',
+    image: '/headshots/Sophie Yang.jpg',
     linkedin: 'https://www.linkedin.com/in/sophie-yang-546b32161/',
   },
 
   {
     name: 'Ben Ni',
     role: 'VP Academic',
-    image: 'public/headshots/Ben Ni.jpg',
+    image: '/headshots/Ben Ni.jpg',
     linkedin: 'https://www.linkedin.com/in/-ben-ni/',
   },
   {
     name: 'Vedant Capoor',
     role: 'VP Relations',
-    image: 'public/headshots/Vedant Capoor.jpg',
+    image: '/headshots/Vedant Capoor.jpg',
     linkedin: 'https://www.linkedin.com/in/vedantcapoor/',
   },
 
@@ -50,42 +50,42 @@ const teamMembers = [
   {
     name: 'Sam Cui',
     role: 'VP Events',
-    image: 'public/headshots/Sam Cui.jpg',
+    image: '/headshots/Sam Cui.jpg',
     linkedin: 'https://www.linkedin.com/in/samcuii/',
   },
 
   {
     name: 'Yeni Oh',
     role: 'VP Events',
-    image: 'public/headshots/Yeni Oh.jpg',
+    image: '/headshots/Yeni Oh.jpg',
     linkedin: 'https://www.linkedin.com/in/yeni-oh-08314a2a2/',
   },
 
   {
     name: 'Arthur Yang',
     role: 'VP Marketing',
-    image: 'public/headshots/Arthur Yang.jpg',
+    image: '/headshots/Arthur Yang.jpg',
     linkedin: 'https://www.linkedin.com/in/arthur-yang-/',
   },
 
   {
     name: 'Jenny Lan',
     role: 'VP Marketing',
-    image: 'public/headshots/Jenny Lan.jpg',
+    image: '/headshots/Jenny Lan.jpg',
     linkedin: 'https://www.linkedin.com/in/jenny-lan/',
   },
 
   {
     name: 'Joyce Yu',
     role: 'VP Internal',
-    image: 'public/headshots/Joyce Yu.jpg',
+    image: '/headshots/Joyce Yu.jpg',
     linkedin: 'https://www.linkedin.com/in/joyceyusauder/',
   },
 
   {
     name: 'Clodagh Dressler',
     role: 'Second Year Rep',
-    image: 'public/headshots/Clodagh Dressler.jpg',
+    image: '/headshots/Clodagh Dressler.jpg',
     linkedin: 'https://www.linkedin.com/in/clodagh-dressler-16346b29a/',
   },
 
