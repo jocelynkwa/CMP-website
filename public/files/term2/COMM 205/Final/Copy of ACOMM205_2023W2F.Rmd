@@ -1,0 +1,192 @@
+---
+title: "ACOMM205_2023W2F"
+author: "Troy Wu"
+date: '2023-04-03'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+#Hello everyone! This is Troy, your COMM 205 instructor. Answer the following questions and you're sure to be better equipped to take your finals! When answering, assume that you can't use R and type your own answers!
+
+#Please note that CMP and this review session are not affiliated with the COMM 205 course or its professors. This should be used as an extra practice guide, and is not a substitute for lectures or course material.
+
+
+rating_movie <- 15
+rating_show <- 12
+rating_Thor <- rating movie + 5
+
+doublevector <- c(7, 8, 9, 10)
+charactervector <- c("A", "B", "C", "D")
+
+data_frame <- tibble(
+	            column1 = c("This", "is", "a", "sentence"),
+	            column2 = c(1, 2, 3, 4),
+	            column3 = c(TRUE, FALSE, FALSE, TRUE)
+)
+
+  
+#Load tidyverse!
+library(tidyverse)
+
+#Load Companies
+companies <- readRDS("/Users/troywu/Downloads/COMM205/North American Stock Market 1994-2018.rds")
+
+##R PROGRAMMING BASICS
+#Question 1: You want to create assign a character value to an object called "g7roup.". Is this possible? T or F
+#Answer: T
+
+#Given these objects, write a ONE LINE conditional statement that would evaluate to true if q1_number is equal to 42 and q1_word is equal to "Drake"
+q1_number <- 40
+q1_word <- "JayZ"
+
+#Answer: 
+q1_number == 42 & q1_word == "Drake"
+
+#Question 2: You just created an object called "q2_random" that is a random numeric value between 1 and 5. You then executed:
+# fav_number <- q2_random
+# new_fave <- fav_number * 2
+# q2_random <- 25
+# What is the value of fav_number after executing?
+
+#A. 25
+#B. 50
+#C. A random number between 1 and 5 *
+#D. A random number between 2 and 10
+#E. Not enough information
+
+
+##R DATA TYPES
+#Question 3: 
+# typeof(FALSE + TRUE). What will output from this function?
+#Answer: integer
+
+# typeof(typeof(FALSE + TRUE)). What will output from this function?
+#Answer: character
+
+#Question 4: I want to create a new vector called numbers with the elements 1, 2, and 3 in it. Will the following code achieve this? T or F
+#numbers[1:3] <- c(1, 2, 3)
+#Answer: F; you can only subset an existing vector
+
+#Question 5: Given this vector, write a conditional statement that will evaluate to TRUE if the max value of the elements squared is larger than 1000
+q5_vector <- c(-3, 10, 30, -4, -35)
+#Answer:
+max(q5_vector^2) > 1000
+
+
+##R DATA FRAME
+
+#Question 6: I have a column called "score" in a data frame called "teams". I want to change the data frame by adding 0.25 to every element under "score". What code can achieve this?
+#Answer: teams$score <- teams$score + 0.25
+
+
+#Question 7: You have the same data frame called "teams" with columns "score" and "rank". You are not given the order of the columns, only their names. You want to get the mean score of the teams, omitting all NA values, what line of code could achieve this?
+#Answer: mean(teams$score, na.rm = TRUE)
+
+#Question 8: Explain in plain English the difference between na.rm, is.na(), and na.omit().
+#Answer: 
+
+#na.rm is an option for calculations in functions: does not drop any observations, simply ignores NA values
+#is.na() checks whether there are NA values; is a logical output that results in TRUE when the input is an NA value and FALSE when not
+#na.omit is used in data frames for dropping/removing all observations that have NA values
+
+
+
+#For Q9 - Q12, use the companies dataset. 
+##R DATA WRANGLING 1
+#Question 9: What is the difference between 
+#data_set <- companies %>%
+#  filter(loc == "CAN", at > 100) %>%
+#  select(gvkey, loc, at)
+#&
+#companies %>%
+#  filter(loc == "CAN", at > 100) %>%
+#  select(gvkey, loc, at)
+
+#Answer: The first set of code transforms the companies dataset and assigns it to a new table called data_set. The second set of code simply transforms the companies dataset and outputs it on the console.
+
+#Question 10: Remove observations with missing values for assets and liabilities, and values of 0 for liabilities. What is the company that has the greatest assets (at) to liabilities (lt) ratio in 2015? Output a table with just this observation and its gvkey, assets, liabilities, and at to lt ratio. 
+#Answer: 
+q9_at_to_lt <- companies %>%
+  filter(fyear == 2015, lt != 0, !is.na(at), !is.na(lt)) %>%
+  mutate(at_to_lt_ratio = at/lt) %>%
+  filter(at_to_lt_ratio == max(at_to_lt_ratio)) %>%
+  select(gvkey, at, lt, at_to_lt_ratio)
+
+
+##R DATA WRANGLING 2
+#Question 10: Create a new data frame that has the following variables: (1) company ID (gvkey), (2) fiscal year (fyear), and (3) each company's (defined by its gvkey) average liabilities (lt) in every fiscal year (defined by its fyear) it operated.
+#Answer:
+q10_avg_lt <- companies %>%
+  group_by(gvkey, fyear) %>%
+  summarise(avg_lt = mean(lt, na.rm = TRUE))
+
+#Question 11: We want to remove all observations of companies that have never reached $50 million in cash (ch) (values are in millions so $50 million is 50), and create a new table with the transformed data. Note that if a company has ever reached $50 million in cash, we must retain all its observations. The table should contain (but not limited to) the variables gvkey, fyear, and ch.
+#Answer:
+
+q11_cash_50 <- companies %>%
+   group_by(gvkey) %>%
+   mutate(max_cash = max(ch, na.rm = TRUE)) %>%
+   filter(max_cash >= 50) %>%
+   select(gvkey, fyear, ch, max_cash)
+
+#Question 12: Run the data frame below. 
+cmp_dataframe <- tibble(
+                 cash = c(2387, 650, 650, 650),
+                 stocks = c(39838, 0, 72839, 0),
+                 name = c("John", "Michael", "Alice", "Zeke")
+                       )
+                       
+#You now perform the following function: 
+#new_cmp_dataframe <- cmp_dataframe %>%
+#   arrange(cash, stocks, desc(name))
+#What is the row number in the cmp_dataframe table of the observation that is now on top of the new_cmp_dataframe table?
+#Answer: 4
+
+
+##R MERGING DATASETS
+#Question 13: 
+#Answer: 
+#You have a data frame called "right_dataset" that has 1500 observations and a data frame called "left_dataset" that also has 1500 observations. You execute the code merged <- inner_join(left_dataset, right_dataset). How many observations are in merged?
+#A. 0
+#B. 1500
+#C. 3000
+#D. Not enough information *
+
+#What about if you executed merged <- left_join(left_dataset, right_dataset)?
+#A. 0
+#B. 1500 *
+#C. 3000
+#D. Not enough information 
+
+#What about if you executed merged <- full_join(left_dataset, right_dataset) with the given information: both datasets have identical primary keys.
+#A. 0
+#B. 1500 *
+#C. 3000
+#D. Not enough information
+
+
+#Finished, good luck on your final! 
