@@ -15,7 +15,7 @@ export default function AboutUs() {
       <div 
         className="relative h-[60vh] bg-cover bg-center"
         style={{
-          backgroundImage: 'url("https://images.unsplash.com/photo-1551986782-d0169b3f8fa7?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80")',
+          backgroundImage: 'url("https://www.sauder.ubc.ca/sites/default/files/dynamic_styles/scale/750/public/2019-05/about-ubc-sauder-hero.png")',
         }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-50">
