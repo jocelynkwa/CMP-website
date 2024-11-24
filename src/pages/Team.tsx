@@ -5,7 +5,7 @@ const teamMembers = [
   {
     name: 'Melinda Ding',
     role: 'Co-Chair',
-    image: '',
+    image: '/headshots/Melinda Ding.jpg',
     linkedin: 'https://www.linkedin.com/in/melinda-ding-b3127219a/',
   },
   {
@@ -43,7 +43,7 @@ const teamMembers = [
   {
     name: 'Denise Lam',
     role: 'VP Finance',
-    image: '',
+    image: '/headshots/Denise Lam.png',
     linkedin: 'https://www.linkedin.com/in/deniiselam/',
   },
 
