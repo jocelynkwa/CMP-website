@@ -5,7 +5,7 @@ const teamMembers = [
   {
     name: 'Melinda Ding',
     role: 'Co-Chair',
-    image: '/headshots/Melinda Ding.jpg',
+    image: '/headshots/Melinda Ding.png',
     linkedin: 'https://www.linkedin.com/in/melinda-ding-b3127219a/',
   },
   {
