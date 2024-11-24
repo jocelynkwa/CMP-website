@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, X, Footprints } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 export default function Navbar() {
@@ -20,7 +20,12 @@ export default function Navbar() {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
-              <Footprints className="h-8 w-8 text-orange-500" />
+              {/* Replace Footprints icon with the penguin image */}
+              <img
+                src="/icons/images/penguin suit.png"
+                alt="Penguin Suit"
+                className="h-8 w-8"
+              />
               <span className="font-bold text-xl text-gray-800">CMP</span>
             </Link>
           </div>
