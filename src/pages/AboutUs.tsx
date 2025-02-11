@@ -55,7 +55,7 @@ export default function AboutUs() {
             <div className="space-y-4">
               {[
                 { icon: Heart, text: 'Free support for all commerce students' },
-                { icon: BookOpen, text: 'Midtemr and final review sessions and study materials' },
+                { icon: BookOpen, text: 'Midterm and final review sessions and study materials' },
                 { icon: Users, text: 'Peer-to-peer mentorship opportunities' },
                 { icon: Trophy, text: 'Proven track record of student success' },
               ].map((item, index) => (

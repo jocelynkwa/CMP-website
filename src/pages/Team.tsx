@@ -90,10 +90,17 @@ const teamMembers = [
   },
 
   {
-    name: '',
+    name: 'Ethan Chae',
     role: 'First Year Rep',
-    image: '',
-    linkedin: '',
+    image: '/headshots/Ethan Chae.png',
+    linkedin: 'https://www.linkedin.com/in/ethan-chae-456b5a327/',
+  },
+
+  {
+    name: 'Sanjanaa Molaka',
+    role: 'First Year Rep',
+    image: '/headshots/Sanjanaa Molaka.png',
+    linkedin: 'https://www.linkedin.com/in/sanjanaa-m-b13732202/',
   },
 ];
 
