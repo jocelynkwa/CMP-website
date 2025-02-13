@@ -11,7 +11,7 @@ const teamMembers = [
   {
     name: 'Katherine Sau',
     role: 'Co-Chair',
-    image: '/headshots/Katherine Sau.jpg',
+    image: '/headshots/Katherine Sau.png',
     linkedin: 'https://www.linkedin.com/in/katherinesau/',
   },
   {
