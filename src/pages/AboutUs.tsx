@@ -103,7 +103,7 @@ export default function AboutUs() {
             </div>
 
             {/* Our Partners Section */}
-            <div>
+            <div className="mt-16">
               <h2 className="text-3xl font-bold text-gray-800 mb-6">Our Partners</h2>
               <div>
                 <div className="flex items-center space-x-4 mb-6">
