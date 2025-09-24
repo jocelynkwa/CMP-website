@@ -1,7 +1,9 @@
-import React from 'react';
-import { Heart, BookOpen, Users, Trophy } from 'lucide-react';
+import { useState } from 'react';
+import { Heart, BookOpen, Users, Trophy, X } from 'lucide-react';
 
 export default function AboutUs() {
+  const [showBanner, setShowBanner] = useState(true);
+
   const stats = [
     { label: 'Students Mentored', value: '500+' },
     { label: 'Review Packages', value: '100+' },
@@ -11,6 +13,40 @@ export default function AboutUs() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* Lumeno AI Banner */}
+      {showBanner && (
+        <div className="bg-gradient-to-r from-amber-50 to-orange-50 border-b border-amber-100 py-2 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto flex items-center justify-center relative">
+            <div className="flex items-center space-x-3">
+              <img
+                src="/images/logo.png"
+                alt="Lumeno AI Logo"
+                className="h-9 w-10"
+              />
+              <span className="text-gray-800 font-medium">
+                Introducing <span className="font-semibold text-lumenoblue italic">Lumeno AI</span>: Your AI Personal Tutor
+              </span>
+            </div>
+            <div className="flex items-center space-x-3 ml-6">
+              <a
+                href="https://www.lumenoai.com/?utm_source=UBC_CMP&utm_medium=redirect&utm_campaign=spring_launch&utm_content=bio_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border-2 border-black text-gray-800 bg-white hover:bg-gray-50 font-semibold py-1 px-4 rounded-lg transition-colors duration-200 inline-block"
+              >
+                Get Started
+              </a>
+            </div>
+            <button
+              onClick={() => setShowBanner(false)}
+              className="absolute right-0 text-gray-500 hover:text-gray-700 transition-colors duration-200"
+            >
+              <X className="h-5 w-5" />
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Hero Section */}
       <div 
         className="relative h-[60vh] bg-cover bg-center"
@@ -65,8 +101,42 @@ export default function AboutUs() {
                 </div>
               ))}
             </div>
+
+            {/* Our Partners Section */}
+            <div className="mt-16">
+              <h2 className="text-3xl font-bold text-gray-800 mb-6">Our Partners</h2>
+              <div>
+                <div className="flex items-center space-x-4 mb-6">
+                  <img
+                    src="/images/LumenoAI.svg"
+                    alt="Lumeno AI Logo"
+                    className="h-20 w-60"
+                  />
+                </div>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  Lumeno is your AI personal tutor that turns your course syllabus into
+                  personalized study plans and offers chat, notes, flashcards, and practice
+                  problems built only on your uploaded course materials, making it an all-in-one
+                  learning companion.
+                </p>
+                <div className="mb-6">
+                  <p className="text-gray-700">
+                    Use code <span className="font-bold text-orange-500">'CUS2025'</span> when creating your Lumeno AI account to access a
+                    2-week <span className="font-bold">FREE</span> trial, then pay only $4.99/month (60% discount)!
+                  </p>
+                </div>
+                <a
+                  href="https://www.lumenoai.com/?utm_source=UBC_CMP&utm_medium=redirect&utm_campaign=spring_launch&utm_content=bio_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border-2 border-orange-500 text-gray-800 bg-white hover:bg-orange-50 font-semibold py-3 px-6 rounded-lg transition-colors duration-200 inline-block"
+                >
+                  Get Started
+                </a>
+              </div>
+            </div>
           </div>
-          
+
           <div className="space-y-6">
             <h2 className="text-3xl font-bold text-gray-800 mb-6">What We Offer</h2>
             <div className="bg-white rounded-lg shadow-md p-6">
