@@ -114,15 +114,14 @@ export default function AboutUs() {
                   />
                 </div>
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  Lumeno is your AI personal tutor that turns your course syllabus into
-                  personalized study plans and offers chat, notes, flashcards, and practice
-                  problems built only on your uploaded course materials, making it an all-in-one
-                  learning companion.
+                  At Lumeno AI, we believe that university is the most formative time in our lives. We aim to maximize the university experience.
                 </p>
                 <div className="mb-6">
+                  <p className="text-gray-700 mb-6">
+                    Our all-in-one platform minimizes students' time studying and enables them to make more friends and find their purpose.
+                  </p>
                   <p className="text-gray-700">
-                    Use code <span className="font-bold text-orange-500">'CUS2025'</span> when creating your Lumeno AI account to access a
-                    2-week <span className="font-bold">FREE</span> trial, then pay only $4.99/month (60% discount)!
+                    Lumeno AI is <strong>FREE</strong> for all UBC students.
                   </p>
                 </div>
                 <a
