@@ -117,11 +117,11 @@ export default function AboutUs() {
                   At Lumeno AI, we believe that university is the most formative time in our lives. We aim to maximize the university experience.
                 </p>
                 <div className="mb-6">
-                  <p className="text-gray-700">
+                  <p className="text-gray-700 mb-6">
                     Our all-in-one platform minimizes students' time studying and enables them to make more friends and find their purpose.
                   </p>
                   <p className="text-gray-700">
-                    Lumeno AI is FREE for all UBC students.
+                    Lumeno AI is <strong>FREE</strong> for all UBC students.
                   </p>
                 </div>
                 <a
